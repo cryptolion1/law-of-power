@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAW OF POWER</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('photo_2024-11-19_19-28-23.jpg') no-repeat center center fixed; /* إضافة صورة خلفية */
+            background-size: cover; /* ضمان تغطية الصورة لكامل الخلفية */
+            color: #fff;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(17, 17, 17, 0.8); /* لون الخلفية الداكنة للرأس مع شفافية */
+            width: 100%;
+            padding-top: 100px; /* إضافة مسافة فارغة في الأعلى لتحريك العنوان لأسفل */
+        }
+
+        header h1 {
+            font-size: 4vw; /* تكبير حجم الخط */
+        }
+
+        header p {
+            font-size: 1.5rem;
+            color: #ccc; /* لون النص */
+            margin-top: 20px; /* إضافة مسافة من الأعلى لتحريك العنصر لأسفل */
+        }
+
+        .section {
+            position: relative;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            background-color: transparent; /* تعيين الخلفية كـ شفاف */
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            color: #00f0ff; /* لون النص الأزرق الفاتح */
+            margin-top: 20px;
+            animation: slideInOnce 1.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .section:nth-child(even) {
+            background-color: transparent; /* تعيين الخلفية كـ شفاف */
+        }
+/* لون الخلفية الداكنة للأقسام الزوجية مع شفافية */
+        }
+
+        .section img {
+            width: 250px; /* تكبير حجم الصورة */
+            height: 250px; /* تكبير حجم الصورة */
+            background-color: transparent; /* تأكد من أن الخلفية شفافة */
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .section:hover p {
+            animation: slideInOnce 1.5s ease-out forwards;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes slideInOnce {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .marquee {
+            background: linear-gradient(90deg, #00FFFF, #FFA500, #FFFFFF); /* لون الخلفية المتدرجة للشريط العلوي */
+            color: #000; /* لون النص */
+            border: 2px solid #FFA500;
+            padding: 5px 0; /* تقليل الارتفاع */
+            font-size: 1.2rem;
+            width: 100%;
+            height: 30px; /* تقليل الارتفاع */
+            position: fixed;
+            top: 0;
+            left: 0; /* التأكد من تثبيت الشريط */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px #FFA500, 0 0 30px #00FFFF;
+            overflow: hidden;
+            z-index: 9999; /* وضع الشريط في المقدمة */
+        }
+
+        .marquee span {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll 10s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .footer h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer .stickers {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px; /* مسافة إضافية قبل قسم الميمات */
+        }
+
+        .footer .stickers img {
+            width: 250px; /* تكبير حجم الصورة */
+            height: 250px; /* تكبير حجم الصورة */
+            border: none; 
+            transition: transform 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+            background-color: transparent; /* تأكد من أن الخلفية شفافة */
+        }
+
+        .footer .stickers img:hover {
+            transform: scale(1.1);
+        }
+
+        .footer .memes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .footer .memes img {
+            width: 250px; /* تكبير حجم الصورة */
+            height: 250px; /* تكبير حجم الصورة */
+            border: none; 
+
+            transition: transform 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+            background-color: transparent; /* تأكد من أن الخلفية شفافة */
+        }
+
+        .footer .memes img:hover {
+            transform: scale(1.1);
+        }
+
+        .footer .social-media {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 40px; /* مسافة إضافية بعد قسم الميمات */
+        }
+
+        .footer .social-media a img {
+            width: 80px;  /* تأكد من تحديد العرض */
+            height: 80px; /* تأكد من تحديد الارتفاع ليكون نفس القيمة */
+            margin: 10px 0;
+            border: 2px solid #fff;
+            border-radius: 50%; /* لجعل الصور دائرية */
+            transition: transform 0.3s ease;
+            background-color: transparent; /* تأكد من أن الخلفية شفافة */
+            object-fit: cover; /* لضمان أن الصورة تغطي المساحة داخل الشكل الدائري */
+            display: block; /* التأكد من أن الصورة لا تؤثر على الحجم */
+        }
+
+        .footer .social-media img:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 5vw;
+            }
+
+            .section img {
+                width: 200px; /* تكبير حجم الصورة */
+                height: 200px; /* تكبير حجم الصورة */
+            }
+
+            .section p {
+                font-size: 1rem;
+            }
+
+            .footer .stickers img,
+            .footer .memes img {
+                width: 200px; /* تكبير حجم الصورة */
+                height: 200px; /* تكبير حجم الصورة */
+            }
+
+            .footer .social-media img {
+                width: 70px; /* تكبير حجم الصورة */
+                height: 70px; /* تكبير حجم الصورة */
+                border-radius: 50%; /* جعل الصور دائرية */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="marquee">
+        <span>Gainmoney gain power cto</span>
+                </div>
+
+                <header>
+                    <h1>LAW OF POWER</h1>
+                </header>
+
+                <section class="section">
+                    <img src="photo_2024-11-19_18-05-22.jpg" alt="Coin">
+                    <p>Join the future of cryptocurrency with law of Power</p>
+                </section>
+                <section class="section">
+                    <img src="photo_2024-11-19_18-05-14.jpg" alt="Coin">
+                    <p>Unleash the potential of meme coins</p>
+                </section>
+                <section class="section">
+                    <img src="photo_2024-11-19_18-06-46.jpg" alt="Coin">
+                    <p>Empower your investments with Law of Power</p>
+                </section>
+
+                <div class="footer">
+                    <h2>Stickers</h2>
+                    <div class="stickers">
+                        <img src="ترتتر.png" alt="Sticker 1">
+                        <img src="لاتلا.png" alt="Sticker 2">
+                        <img src="لبتاا.png" alt="Sticker 3">
+                        <img src="تارار.png" alt="Sticker 4">
+                    </div>
+                    <h2>Memes</h2>
+                    <div class="memes">
+                        <img src="path_to_meme_image_1.png" alt="Meme 1">
+                        <img src="path_to_meme_image_2.png" alt="Meme 2">
+                        <img src="path_to_meme_image_3.png" alt="Meme 3">
+                        <img src="path_to_meme_image_4.png" alt="Meme 4">
+                    </div>
+                    <div class="social-media">
+                        <a href="https://t.me/thelawofpower">
+                            <img src="photo_2024-11-19_21-06-34.jpg" alt="Telegram">
+                        </a>
+                        <a href="https://pump.fun/coin/5A4K5wHAuj6GrCegRCS6sx71JwUVu7NCqUkDXKS9pump">
+                            <img src="photo_2024-11-19_21-11-37.jpg" alt="Bampf">
+                        </a>
+                        <a href="https://x.com/TheLawOfPowerC">
+                            <img src="photo_2024-11-19_21-06-30.jpg" alt="Twitter">
+                        </a>
+                    </div>
+                </div>
+            </body>
+            </html>
